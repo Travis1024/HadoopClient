@@ -1,15 +1,10 @@
 package com.hadoop.travis.WordsCount;
 
-import com.hadoop.travis.FilesCount.FilesCountDriver;
-import com.hadoop.travis.FilesCount.FilesCountMapper;
-import com.hadoop.travis.FilesCount.FilesCountReducer;
-import com.hadoop.travis.FilesCount.WholeFileInputFormat;
 import com.hadoop.travis.Utils.ParamsClass;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;

@@ -16,6 +16,7 @@ import java.io.IOException;
 public class FilesCountReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
     private IntWritable result = new IntWritable();
 
+
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Reducer<Text, IntWritable, Text, IntWritable>.Context context) throws IOException, InterruptedException {
         int sum = 0;

@@ -27,5 +27,4 @@ public class DealTestDateMapper extends Mapper<LongWritable, Text, Text, Text> {
         v.set(value.toString());
         context.write(k, v);
     }
-    
 }

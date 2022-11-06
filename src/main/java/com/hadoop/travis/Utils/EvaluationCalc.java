@@ -117,13 +117,19 @@ public class EvaluationCalc {
      **/
     public static void calcMacroIndex(){
         double top = 0.0;
+        double topP = 0.0;
+        double topR = 0.0;
         for (int i = 0; i < classList.length; i++) {
             resultIndex.put("macroRecall" + i, TP[i] * 1.0 / (TP[i] + FN[i]));
             resultIndex.put("macroPrecision" + i, TP[i] * 1.0 / (TP[i] + FP[i]));
             resultIndex.put("macroF1Score" + i, TP[i] * 2.0 / (2.0 * TP[i] + FP[i] + FN[i]));
             top += resultIndex.get("macroF1Score" + i);
+            topP += resultIndex.get("macroPrecision" + i);
+            topR += resultIndex.get("macroRecall" + i);
         }
         resultIndex.put("macroF1", top / classList.length);
+        resultIndex.put("macroP", topP / classList.length);
+        resultIndex.put("macroR", topR / classList.length);
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
@@ -133,18 +139,20 @@ public class EvaluationCalc {
         System.out.println("microRecall" + "\t\t-----> " + resultIndex.get("microRecall"));
         System.out.println("microPrecision" + "\t-----> " + resultIndex.get("microPrecision"));
         System.out.println("microF1" + "\t\t\t-----> " + resultIndex.get("microF1"));
-        System.out.println("macroRecall0" + "\t-----> " + resultIndex.get("macroRecall0"));
-        System.out.println("macroRecall1" + "\t-----> " + resultIndex.get("macroRecall1"));
-        System.out.println("macroRecall2" + "\t-----> " + resultIndex.get("macroRecall2"));
-        System.out.println("macroRecall3" + "\t-----> " + resultIndex.get("macroRecall3"));
-        System.out.println("macroPrecision0" + "\t-----> " + resultIndex.get("macroPrecision0"));
-        System.out.println("macroPrecision1" + "\t-----> " + resultIndex.get("macroPrecision1"));
-        System.out.println("macroPrecision2" + "\t-----> " + resultIndex.get("macroPrecision2"));
-        System.out.println("macroPrecision3" + "\t-----> " + resultIndex.get("macroPrecision3"));
-        System.out.println("macroF1Score0" + "\t-----> " + resultIndex.get("macroF1Score0"));
-        System.out.println("macroF1Score1" + "\t-----> " + resultIndex.get("macroF1Score1"));
-        System.out.println("macroF1Score2" + "\t-----> " + resultIndex.get("macroF1Score2"));
-        System.out.println("macroF1Score3" + "\t-----> " + resultIndex.get("macroF1Score3"));
+        System.out.println("macroRecall0-<I13000>" + "\t-----> " + resultIndex.get("macroRecall0"));
+        System.out.println("macroRecall1-<I33020>" + "\t-----> " + resultIndex.get("macroRecall1"));
+        System.out.println("macroRecall2-<I75000>" + "\t-----> " + resultIndex.get("macroRecall2"));
+        System.out.println("macroRecall3-<I81402>" + "\t-----> " + resultIndex.get("macroRecall3"));
+        System.out.println("macroPrecision0-<I13000>" + "\t-----> " + resultIndex.get("macroPrecision0"));
+        System.out.println("macroPrecision1-<I33020>" + "\t-----> " + resultIndex.get("macroPrecision1"));
+        System.out.println("macroPrecision2-<I75000>" + "\t-----> " + resultIndex.get("macroPrecision2"));
+        System.out.println("macroPrecision3-<I81402>" + "\t-----> " + resultIndex.get("macroPrecision3"));
+        System.out.println("macroF1Score0-<I13000>" + "\t-----> " + resultIndex.get("macroF1Score0"));
+        System.out.println("macroF1Score1-<I33020>" + "\t-----> " + resultIndex.get("macroF1Score1"));
+        System.out.println("macroF1Score2-<I75000>" + "\t-----> " + resultIndex.get("macroF1Score2"));
+        System.out.println("macroF1Score3-<I81402>" + "\t-----> " + resultIndex.get("macroF1Score3"));
         System.out.println("macroF1" + "\t\t\t-----> " + resultIndex.get("macroF1"));
+        System.out.println("macroP" + "\t\t\t-----> " + resultIndex.get("macroP"));
+        System.out.println("macroR" + "\t\t\t-----> " + resultIndex.get("macroR"));
     }
 }

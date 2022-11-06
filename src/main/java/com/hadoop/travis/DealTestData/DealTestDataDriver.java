@@ -1,6 +1,5 @@
 package com.hadoop.travis.DealTestData;
 
-
 import com.hadoop.travis.Utils.ParamsClass;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;

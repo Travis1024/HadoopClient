@@ -1,8 +1,5 @@
 package com.hadoop.travis.Utils;
 
-import org.apache.commons.collections.map.HashedMap;
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +7,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * description: ()
+ * description: (划分训练集与测试集)
  *
  * @author : [travis-wei]
  * @version : [v1.0]
@@ -29,7 +26,6 @@ public class PartitionDataSet {
         }
         return fileNameList;
     }
-
     public static void coreFunc(String trainPath, String testPath, ArrayList<String> fileNameList, int maxSize) {
         int num = 0;
         Random random = new Random();
@@ -44,12 +40,10 @@ public class PartitionDataSet {
             }
         }
     }
-
     private static void moveFile(String trainPath, String testPath, String s) {
         File file = new File(trainPath + "\\" + s);
         file.renameTo(new File(testPath + "\\" +s));
     }
-
 
     public static void main(String[] args) {
         String trainPath = "E:\\ShareFiles\\CourseMapReduce\\IndustryData\\train\\I81402";
